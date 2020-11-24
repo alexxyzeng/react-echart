@@ -1,11 +1,11 @@
 // import React from 'react'
 import { ChartComponent } from '../enum'
-import { ITitleOption } from '../types'
+import { ITitleOption, OptionType } from '../types'
 import { useOption } from '../hooks'
 
-function Tooltip(options: ITitleOption) {
+function Title(options: ITitleOption) {
   useOption(options, ChartComponent.Title)
   return null
 }
 
-export default Tooltip
+export default Title

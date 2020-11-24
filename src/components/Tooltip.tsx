@@ -4,7 +4,7 @@ import { ITooltipOption } from '../types'
 import { useOption } from '../hooks'
 
 function Tooltip(options: ITooltipOption) {
-  useOption(options, ChartComponent.Legend)
+  useOption(options, ChartComponent.Tooltip)
   return null
 }
 

@@ -4,10 +4,12 @@ import { EchartsOptionContext } from '../context'
 import { ChartComponent } from '../enum'
 import { IComponentType } from '../types'
 
-function useOption(options: IComponentType, componentType: ChartComponent) {
+function useOption(option: IComponentType, componentType: ChartComponent) {
   const { updateOption } = useContext(EchartsOptionContext)
   useEffect(() => {
-    const partialOption = { [componentType]: options } as Partial<EChartOption>
+    const partialOption = {
+      [componentType]: option.options
+    } as Partial<EChartOption>
     updateOption(partialOption, componentType)
   }, [options])
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Echart, Title, Legend } from 'react-echart'
+import { Echart, Title, Legend, YAxis } from 'react-echart'
 
 const App = () => {
   // return <ExampleComponent text="Create React Library Example 😄" />
@@ -8,14 +8,16 @@ const App = () => {
   return (
     <div style={{ width: 600, height: 500 }}>
       <Echart className='test'>
-        <Title text='Hello Echart' subtext='test' left='center' show={true} />
-        <Legend
-          type='plain'
-          align='left'
-          show={showLegend}
-          right={10}
-          data={['流量', '降雨量']}
+        <YAxis options={{ type: 'value', name: 'Y轴' }} />
+        <Title
+          options={{
+            text: 'Hello Echart',
+            subtext: 'test',
+            left: 'center',
+            show: true
+          }}
         />
+        <Legend type='plain' align='left' show={showLegend} right={10} />
       </Echart>
       <button onClick={() => setShowLegend((showStatus) => !showStatus)}>
         Toggle
