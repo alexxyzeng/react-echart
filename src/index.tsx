@@ -1,10 +1,15 @@
-import * as React from 'react'
-import styles from './styles.module.css'
+// import * as React from 'react'
+// import styles from './styles.module.css'
 
-interface Props {
-  text: string
-}
+import Echart from './Echarts'
+import { Legend } from './components'
 
-export const ExampleComponent = ({ text }: Props) => {
-  return <div className={styles.test}>Example Component: {text}</div>
-}
+// interface Props {
+//   text: string
+// }
+
+// export const ExampleComponent = ({ text }: Props) => {
+//   return <div className={styles.test}>Example Component: {text}</div>
+// }
+
+export { Echart, Legend }
