@@ -11,6 +11,8 @@ export interface IXAxisOption extends EChartOption.XAxis {}
 
 export interface IYAxisOption extends EChartOption.YAxis {}
 
+export interface IAxisPointerOption extends EChartOption.AxisPointer {}
+
 export interface ISeriesBarOption extends EChartOption.SeriesBar {}
 export interface ISeriesLineOption extends EChartOption.SeriesLine {}
 export interface ISeriesLinesOption extends EChartOption.SeriesLines {}
@@ -18,3 +20,22 @@ export interface ISeriesGaugeOption extends EChartOption.SeriesGauge {}
 export interface ISeriesPieOption extends EChartOption.SeriesPie {}
 export interface ISeriesRadarOption extends EChartOption.SeriesRadar {}
 export interface ISeriesScatterOption extends EChartOption.SeriesScatter {}
+
+export type IAttachmentType =
+  | ITitleOption
+  | ILegendOption
+  | ITooltipOption
+  | IXAxisOption
+  | IYAxisOption
+  | IAxisPointerOption
+
+export type ISeriesType =
+  | ISeriesBarOption
+  | ISeriesLineOption
+  | ISeriesLineOption
+  | ISeriesLineOption
+  | ISeriesGaugeOption
+  | ISeriesRadarOption
+  | ISeriesScatterOption
+
+export type IComponentType = IAttachmentType | ISeriesType

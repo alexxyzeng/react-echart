@@ -1,3 +1,5 @@
 import Legend from './Legend'
+import Title from './Title'
+import Tooltip from './Tooltip'
 
-export { Legend }
+export { Title, Legend, Tooltip }

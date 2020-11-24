@@ -1,6 +1,9 @@
-/* eslint-disable no-unused-vars */
 export enum ChartComponent {
+  Title = 'title',
   Legend = 'legend',
   Tooltip = 'tooltip',
-  Series = 'series'
+  Series = 'series',
+  XAxis = 'xAxis',
+  YAxis = 'yAxis',
+  AxisPointer = 'axisPointer'
 }

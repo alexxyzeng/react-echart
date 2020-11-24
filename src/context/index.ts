@@ -1,12 +1,13 @@
 import { createContext } from 'react'
 // eslint-disable-next-line no-unused-vars
-import Echarts from 'echarts'
+import { EChartOption } from 'echarts'
+import { ChartComponent } from '../enum'
 
 export interface IContextType {
-  setOptions: (options: Echarts.EChartOption) => void
+  setOptions: (options: EChartOption) => void
   updateOption: (
-    options: Partial<Echarts.EChartOption>,
-    optionKey: string
+    options: Partial<EChartOption>,
+    optionKey: ChartComponent
   ) => void
 }
 

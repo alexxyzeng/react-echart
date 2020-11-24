@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React, { Component, ReactChildren, ReactChild, createRef } from 'react'
+import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from 'echarts'
 import { EchartsOptionContext, IContextType } from './context'
 
 interface IProps {
   className: string
-  children: ReactChild | ReactChildren
+  children: ReactNode
   notMerge?: boolean
   lazyUpdate?: boolean
 }
@@ -52,9 +52,9 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     console.log(options)
   }
 
-  updateOption = (options: Partial<Echarts.EChartOption>, key: string) => {
+  updateOption = (options: Partial<Echarts.EChartOption>) => {
     console.log(options, '---- options')
-    this.options = { ...this.options, [key]: options }
+    this.options = { ...this.options, ...options }
     this.echartsLib.setOption(this.options)
   }
 

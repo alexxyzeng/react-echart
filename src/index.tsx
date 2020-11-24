@@ -2,7 +2,7 @@
 // import styles from './styles.module.css'
 
 import Echart from './Echarts'
-import { Legend } from './components'
+import { Legend, Title, Tooltip } from './components'
 
 // interface Props {
 //   text: string
@@ -12,4 +12,4 @@ import { Legend } from './components'
 //   return <div className={styles.test}>Example Component: {text}</div>
 // }
 
-export { Echart, Legend }
+export { Echart, Title, Tooltip, Legend }
