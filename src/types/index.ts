@@ -1,34 +1,51 @@
 // eslint-disable-next-line no-unused-vars
-import { EChartOption, EChartTitleOption } from 'echarts'
+import { EChartOption } from 'echarts'
+import {
+  ITitle,
+  ILegend,
+  IGrid,
+  ITooltip,
+  IXAxis,
+  IYAxis,
+  IAxisPointer,
+  ISeriesBar,
+  ISeriesLine,
+  ISeriesLineOrBar,
+  ISeriesLines,
+  ISeriesPie,
+  ISeriesGauge,
+  ISeriesRadar,
+  ISeriesScatter,
+  IToolbox
+} from './chartTypes'
 
 // export interface ITitleOption extends EChartTitleOption {}
 
 // export interface IGridOption extends EChartOption.Grid {}
-export type ITitleOption = ArrayMaybeOptionType<EChartTitleOption>
-export type IGridOption = ArrayMaybeOptionType<EChartOption.Grid>
 
-export type ILegendOption = OptionType<EChartOption.Legend>
+export type ITitleOption = ArrayMaybeOptionType<ITitle>
+export type IGridOption = ArrayMaybeOptionType<IGrid>
 
-export type ITooltipOption = OptionType<EChartOption.Tooltip>
+export type ILegendOption = OptionType<ILegend>
 
-// export interface IXAxisOption extends EChartOption.XAxis {}
-export type IXAxisOption = ArrayMaybeOptionType<EChartOption.XAxis>
-// export interface IYAxisOption extends EChartOption.YAxis {}
-export type IYAxisOption = ArrayMaybeOptionType<EChartOption.YAxis>
+export type ITooltipOption = OptionType<ITooltip>
 
-export type IAxisPointerOption = OptionType<EChartOption.AxisPointer>
+// export interface IXAxisOption extends XAxis {}
+export type IXAxisOption = ArrayMaybeOptionType<IXAxis>
+// export interface IYAxisOption extends YAxis {}
+export type IYAxisOption = ArrayMaybeOptionType<IYAxis>
 
-export type ISeriesBarOption = ArrayOptionType<EChartOption.SeriesBar>
-export type ISeriesLineOption = ArrayOptionType<EChartOption.SeriesLine>
-export type ISeriesLinesOption = ArrayOptionType<EChartOption.SeriesLines>
-export type ISeriesGaugeOption = ArrayOptionType<EChartOption.SeriesGauge>
-export type ISeriesPieOption = ArrayOptionType<EChartOption.SeriesPie>
-export type ISeriesRadarOption = ArrayOptionType<EChartOption.SeriesRadar>
-export type ISeriesScatterOption = ArrayOptionType<EChartOption.SeriesScatter>
+export type IAxisPointerOption = OptionType<IAxisPointer>
 
-export type ISeriesLineOrBarOption = ArrayOptionType<
-  EChartOption.SeriesBar | EChartOption.SeriesLine
->
+export type ISeriesBarOption = ArrayOptionType<ISeriesBar>
+export type ISeriesLineOption = ArrayOptionType<ISeriesLine>
+export type ISeriesLinesOption = ArrayOptionType<ISeriesLines>
+export type ISeriesGaugeOption = ArrayOptionType<ISeriesGauge>
+export type ISeriesPieOption = ArrayOptionType<ISeriesPie>
+export type ISeriesRadarOption = ArrayOptionType<ISeriesRadar>
+export type ISeriesScatterOption = ArrayOptionType<ISeriesScatter>
+
+export type ISeriesLineOrBarOption = ArrayOptionType<ISeriesLineOrBar>
 
 export type IBaseOption = Pick<
   EChartOption,
@@ -77,4 +94,23 @@ export type OptionType<T> = {
 
 export type ArrayOptionType<T> = {
   options: Array<T>
+}
+
+export {
+  ITitle,
+  ILegend,
+  IGrid,
+  ITooltip,
+  IXAxis,
+  IYAxis,
+  IAxisPointer,
+  ISeriesBar,
+  ISeriesLine,
+  ISeriesLines,
+  ISeriesPie,
+  ISeriesGauge,
+  ISeriesRadar,
+  ISeriesScatter,
+  ISeriesLineOrBar,
+  IToolbox
 }

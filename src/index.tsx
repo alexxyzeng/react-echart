@@ -1,6 +1,5 @@
 // import * as React from 'react'
 // import styles from './styles.module.css'
-
 import Echart from './Echarts'
 import {
   AxisPointer,
@@ -14,6 +13,24 @@ import {
   XAxis,
   YAxis
 } from './components'
+import {
+  ITitle,
+  ILegend,
+  IGrid,
+  ITooltip,
+  IXAxis,
+  IYAxis,
+  IAxisPointer,
+  ISeriesBar,
+  ISeriesLine,
+  ISeriesLineOrBar,
+  ISeriesLines,
+  ISeriesPie,
+  ISeriesGauge,
+  ISeriesRadar,
+  ISeriesScatter,
+  IToolbox
+} from './types'
 
 export {
   Echart,
@@ -27,4 +44,23 @@ export {
   Tooltip,
   XAxis,
   YAxis
+}
+
+export {
+  ITitle,
+  ILegend,
+  IGrid,
+  ITooltip,
+  IXAxis,
+  IYAxis,
+  IAxisPointer,
+  ISeriesBar,
+  ISeriesLine,
+  ISeriesLines,
+  ISeriesPie,
+  ISeriesGauge,
+  ISeriesRadar,
+  ISeriesScatter,
+  ISeriesLineOrBar,
+  IToolbox
 }
