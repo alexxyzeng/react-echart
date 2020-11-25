@@ -8,7 +8,11 @@ import {
   SeriesBar,
   SeriesLine,
   SeriesLineAndBar,
+  SeriesRadar,
+  SeriesScatter,
+  SeriesGauge,
   Title,
+  Toolbox,
   Tooltip,
   XAxis,
   YAxis
@@ -33,14 +37,17 @@ import {
 } from './types'
 
 export {
-  Echart,
   AxisPointer,
   Grid,
   Legend,
   SeriesBar,
   SeriesLine,
   SeriesLineAndBar,
+  SeriesRadar,
+  SeriesScatter,
+  SeriesGauge,
   Title,
+  Toolbox,
   Tooltip,
   XAxis,
   YAxis

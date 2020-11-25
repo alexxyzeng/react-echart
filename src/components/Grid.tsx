@@ -1,6 +1,6 @@
 // import React from 'react'
 import { ChartComponent } from '../enum'
-import { ArrayMaybeOptionType, IGridOption } from '../types'
+import { IGridOption } from '../types'
 import { useOption } from '../hooks'
 
 function Grid(options: IGridOption) {

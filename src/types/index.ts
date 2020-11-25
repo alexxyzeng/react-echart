@@ -37,6 +37,8 @@ export type IYAxisOption = ArrayMaybeOptionType<IYAxis>
 
 export type IAxisPointerOption = OptionType<IAxisPointer>
 
+export type IToolboxOption = OptionType<IToolbox>
+
 export type ISeriesBarOption = ArrayOptionType<ISeriesBar>
 export type ISeriesLineOption = ArrayOptionType<ISeriesLine>
 export type ISeriesLinesOption = ArrayOptionType<ISeriesLines>
@@ -72,6 +74,7 @@ export type IAttachmentType =
   | IXAxisOption
   | IYAxisOption
   | IAxisPointerOption
+  | IToolboxOption
 
 export type ISeriesType =
   | ISeriesBarOption
