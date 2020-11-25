@@ -19,5 +19,5 @@ export {
   Title,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis 
 }

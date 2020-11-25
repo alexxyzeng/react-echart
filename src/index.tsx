@@ -13,9 +13,10 @@ import {
   Tooltip,
   XAxis,
   YAxis
-} from './components/index'
+} from './components'
 
 export {
+  Echart,
   AxisPointer,
   Grid,
   Legend,
