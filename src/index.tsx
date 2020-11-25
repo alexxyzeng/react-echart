@@ -6,10 +6,24 @@ import {
   AxisPointer,
   Grid,
   Legend,
+  SeriesBar,
+  SeriesLine,
+  SeriesLineAndBar,
   Title,
   Tooltip,
   XAxis,
   YAxis
-} from './components'
+} from './components/index'
 
-export { Echart, AxisPointer, Grid, Legend, Title, Tooltip, XAxis, YAxis }
+export {
+  AxisPointer,
+  Grid,
+  Legend,
+  SeriesBar,
+  SeriesLine,
+  SeriesLineAndBar,
+  Title,
+  Tooltip,
+  XAxis,
+  YAxis
+}

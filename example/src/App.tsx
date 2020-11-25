@@ -5,19 +5,30 @@ import { Echart, Title, Legend, YAxis } from 'react-echart'
 const App = () => {
   // return <ExampleComponent text="Create React Library Example 😄" />
   const [showLegend, setShowLegend] = useState(false)
+
   return (
     <div style={{ width: 600, height: 500 }}>
       <Echart className='test'>
-        <YAxis options={{ type: 'value', name: 'Y轴' }} />
+        <YAxis
+          options={[
+            { type: 'value', name: 'Y轴' },
+            { type: 'category', name: 'aa' }
+          ]}
+        />
         <Title
           options={{
             text: 'Hello Echart',
             subtext: 'test',
-            left: 'center',
+            textAlign: 'center',
             show: true
           }}
         />
-        <Legend type='plain' align='left' show={showLegend} right={10} />
+        <Legend
+          options={{
+            type: 'plain',
+            show: showLegend
+          }}
+        />
       </Echart>
       <button onClick={() => setShowLegend((showStatus) => !showStatus)}>
         Toggle

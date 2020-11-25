@@ -11,7 +11,7 @@ function useOption(option: IComponentType, componentType: ChartComponent) {
       [componentType]: option.options
     } as Partial<EChartOption>
     updateOption(partialOption, componentType)
-  }, [options])
+  }, [option])
 }
 
 export { useOption }

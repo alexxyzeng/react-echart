@@ -24,23 +24,9 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     super(props)
     this.echartsElementRef = createRef()
     this.options = {
-      xAxis: {
-        type: 'category',
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-      },
-      yAxis: {
-        type: 'value'
-      },
-      series: [
-        {
-          data: [820, 932, 901, 934, 1290, 1330, 1320],
-          type: 'line',
-          name: 'test'
-        }
-      ],
-      legend: {
-        show: true
-      }
+      xAxis: {},
+      yAxis: {},
+      series: []
     }
     this.state = {
       setOptions: this.setOption,
@@ -55,6 +41,9 @@ class EchartsReactCore extends Component<IProps, IContextType> {
   updateOption = (options: Partial<Echarts.EChartOption>) => {
     console.log(options, '---- options')
     this.options = { ...this.options, ...options }
+    console.log('====================================')
+    console.log(this.options, '---- final options')
+    console.log('====================================')
     this.echartsLib.setOption(this.options)
   }
 
