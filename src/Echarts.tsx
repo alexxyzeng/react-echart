@@ -2,12 +2,14 @@
 import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from 'echarts'
 import { EchartsOptionContext, IContextType } from './context'
+import { IBaseOption } from './types'
 
 interface IProps {
   className: string
   children: ReactNode
   notMerge?: boolean
   lazyUpdate?: boolean
+  options?: IBaseOption
 }
 
 // interface IState {
@@ -26,7 +28,8 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     this.options = {
       xAxis: {},
       yAxis: {},
-      series: []
+      series: [],
+      ...(this.options || {})
     }
     this.state = {
       setOptions: this.setOption,
@@ -44,7 +47,8 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     console.log('====================================')
     console.log(this.options, '---- final options')
     console.log('====================================')
-    this.echartsLib.setOption(this.options)
+    const { notMerge, lazyUpdate } = this.props
+    this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
   }
 
   componentDidMount() {
