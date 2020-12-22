@@ -1,3 +1,4 @@
+import 'echarts/lib/chart/radar'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesRadarOption } from '../types'

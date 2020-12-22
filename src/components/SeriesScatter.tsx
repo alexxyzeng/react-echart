@@ -1,3 +1,4 @@
+import 'echarts/lib/chart/scatter'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesScatterOption } from '../types'

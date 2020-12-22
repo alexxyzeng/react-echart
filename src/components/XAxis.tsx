@@ -1,4 +1,5 @@
 // import React from 'react'
+import 'echarts/lib/component/grid'
 import { ChartComponent } from '../enum'
 import { IXAxisOption, OptionType } from '../types'
 import { useOption } from '../hooks'

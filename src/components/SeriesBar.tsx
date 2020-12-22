@@ -1,3 +1,4 @@
+import 'echarts/lib/chart/bar'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesBarOption } from '../types'

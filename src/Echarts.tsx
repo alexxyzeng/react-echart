@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { Component, createRef, ReactNode } from 'react'
-import Echarts from 'echarts'
+import Echarts from 'echarts/lib/echarts'
 import { EchartsOptionContext, IContextType } from './context'
 import { IBaseOption } from './types'
 

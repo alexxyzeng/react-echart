@@ -1,4 +1,5 @@
 // import React from 'react'
+import 'echarts/lib/component/title'
 import { ChartComponent } from '../enum'
 import { ITitleOption } from '../types'
 import { useOption } from '../hooks'

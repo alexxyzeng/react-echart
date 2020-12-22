@@ -71,3 +71,5 @@ export {
   ISeriesLineOrBar,
   IToolbox
 }
+
+export { Echart }

@@ -1,4 +1,5 @@
 // import React from 'react'
+import 'echarts/lib/component/axisPointer'
 import { ChartComponent } from '../enum'
 import { IAxisPointerOption } from '../types'
 import { useOption } from '../hooks'
