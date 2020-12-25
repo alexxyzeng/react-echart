@@ -42,11 +42,7 @@ class EchartsReactCore extends Component<IProps, IContextType> {
   }
 
   updateOption = (options: Partial<Echarts.EChartOption>) => {
-    console.log(options, '---- options')
     this.options = { ...this.options, ...options }
-    console.log('====================================')
-    console.log(this.options, '---- final options')
-    console.log('====================================')
     const { notMerge, lazyUpdate } = this.props
     this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
   }

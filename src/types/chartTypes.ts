@@ -21,23 +21,23 @@ export interface IToolboxOption {}
 
 declare namespace EchartOption {
   export interface toolbox {
-    id: string
-    show: boolean
-    orient: 'horizontal' | 'vertical'
-    itemSize: number
-    itemGap: number
-    showTitle: boolean
-    feature: object
-    iconStyle: object
-    emphasis: object
-    zlevel: number
-    z: number
-    left: string | number
-    top: string | number
-    right: string | number
-    bottom: string | number
-    width: string | number
-    height: string | number
-    tooltip: ITooltip
+    id?: string
+    show?: boolean
+    orient?: 'horizontal' | 'vertical'
+    itemSize?: number
+    itemGap?: number
+    showTitle?: boolean
+    feature?: object
+    iconStyle?: object
+    emphasis?: object
+    zlevel?: number
+    z?: number
+    left?: string | number
+    top?: string | number
+    right?: string | number
+    bottom?: string | number
+    width?: string | number
+    height?: string | number
+    tooltip?: ITooltip
   }
 }
