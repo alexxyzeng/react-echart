@@ -97,6 +97,7 @@ export type ISeriesType =
   | ISeriesGaugeOption
   | ISeriesRadarOption
   | ISeriesScatterOption
+  | ISeriesPieOption
 
 export type IComponentType = IAttachmentType | ISeriesType
 

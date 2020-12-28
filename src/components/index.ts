@@ -7,6 +7,7 @@ import SeriesLineAndBar from './SeriesLineAndBar'
 import SeriesRadar from './SeriesRadar'
 import SeriesScatter from './SeriesScatter'
 import SeriesGauge from './SeriesGauge'
+import SeriesPie from './SeriesPie'
 import Title from './Title'
 import Toolbox from './Toolbox'
 import Tooltip from './Tooltip'
@@ -24,6 +25,7 @@ export {
   SeriesRadar,
   SeriesScatter,
   SeriesGauge,
+  SeriesPie,
   Title,
   Toolbox,
   Tooltip,
