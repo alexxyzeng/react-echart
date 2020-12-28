@@ -1,5 +1,5 @@
 // import React from 'react'
-import 'echarts/lib/component/grid'
+import 'echarts/lib/component/graphic'
 import { ChartComponent } from '../enum'
 import { IGraphicOption } from '../types'
 import { useOption } from '../hooks'

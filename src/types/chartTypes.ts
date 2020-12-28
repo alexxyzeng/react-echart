@@ -16,7 +16,7 @@ export type ISeriesGauge = EChartOption.SeriesGauge
 export type ISeriesRadar = EChartOption.SeriesRadar
 export type ISeriesScatter = EChartOption.SeriesScatter
 export type IToolbox = EchartOption.toolbox
-export type IGraphic = EchartOption.graphic
+export type IGraphic = Pick<EChartOption, 'graphic'>
 
 export interface IToolboxOption {}
 
@@ -40,10 +40,5 @@ declare namespace EchartOption {
     width?: string | number
     height?: string | number
     tooltip?: ITooltip
-  }
-
-  export interface graphic {
-    id?: string
-    elements?: any[]
   }
 }

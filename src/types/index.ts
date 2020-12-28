@@ -67,6 +67,15 @@ export type IBaseOption = Pick<
   | 'blendMode'
   | 'hoverLayerThreshold'
   | 'useUTC'
+  // TODO: 是否要引入对应的模块
+  // | 'brush'
+  // | 'geo'
+  // | 'parallel'
+  // | 'parallelAxis'
+  // | 'singleAxis'
+  // | 'timeline'
+  // | 'graphic'
+  // | 'aria'
 >
 
 export type IAttachmentType =
