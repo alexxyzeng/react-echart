@@ -7,5 +7,6 @@ export enum ChartComponent {
   XAxis = 'xAxis',
   YAxis = 'yAxis',
   AxisPointer = 'axisPointer',
-  Toolbox = 'toolbox'
+  Toolbox = 'toolbox',
+  Graphic = 'graphic'
 }
