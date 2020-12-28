@@ -26,8 +26,8 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     super(props)
     this.echartsElementRef = createRef()
     this.options = {
-      xAxis: {},
-      yAxis: {},
+      xAxis: { show: false },
+      yAxis: { show: false },
       series: [],
       ...(this.options || {})
     }
