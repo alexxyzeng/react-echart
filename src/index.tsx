@@ -19,6 +19,7 @@ import {
   Graphic
 } from './components'
 import {
+  IBaseOption,
   ITitle,
   ILegend,
   IGrid,
@@ -57,6 +58,7 @@ export {
 }
 
 export {
+  IBaseOption,
   ITitle,
   ILegend,
   IGrid,
