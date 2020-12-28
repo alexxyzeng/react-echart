@@ -16,7 +16,8 @@ import {
   ISeriesGauge,
   ISeriesRadar,
   ISeriesScatter,
-  IToolbox
+  IToolbox,
+  IGraphic
 } from './chartTypes'
 
 // export interface ITitleOption extends EChartTitleOption {}
@@ -49,6 +50,8 @@ export type ISeriesScatterOption = ArrayOptionType<ISeriesScatter>
 
 export type ISeriesLineOrBarOption = ArrayOptionType<ISeriesLineOrBar>
 
+export type IGraphicOption = OptionType<IGraphic>
+
 export type IBaseOption = Pick<
   EChartOption,
   | 'color'
@@ -75,6 +78,7 @@ export type IAttachmentType =
   | IYAxisOption
   | IAxisPointerOption
   | IToolboxOption
+  | IGraphicOption
 
 export type ISeriesType =
   | ISeriesBarOption
@@ -115,5 +119,6 @@ export {
   ISeriesRadar,
   ISeriesScatter,
   ISeriesLineOrBar,
-  IToolbox
+  IToolbox,
+  IGraphic
 }

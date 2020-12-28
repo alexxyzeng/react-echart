@@ -15,7 +15,8 @@ import {
   Toolbox,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
+  Graphic
 } from './components'
 import {
   ITitle,
@@ -33,7 +34,8 @@ import {
   ISeriesGauge,
   ISeriesRadar,
   ISeriesScatter,
-  IToolbox
+  IToolbox,
+  IGraphic
 } from './types'
 
 export {
@@ -50,7 +52,8 @@ export {
   Toolbox,
   Tooltip,
   XAxis,
-  YAxis
+  YAxis,
+  Graphic
 }
 
 export {
@@ -69,7 +72,8 @@ export {
   ISeriesRadar,
   ISeriesScatter,
   ISeriesLineOrBar,
-  IToolbox
+  IToolbox,
+  IGraphic
 }
 
 export { Echart }
