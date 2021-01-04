@@ -14,6 +14,7 @@ import Tooltip from './Tooltip'
 import XAxis from './XAxis'
 import YAxis from './YAxis'
 import Graphic from './Graphic'
+import DataZoom from './DataZoom'
 
 export {
   AxisPointer,
@@ -31,5 +32,6 @@ export {
   Tooltip,
   XAxis,
   YAxis,
-  Graphic
+  Graphic,
+  DataZoom
 }

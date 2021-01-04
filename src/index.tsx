@@ -1,6 +1,7 @@
 // import * as React from 'react'
 // import styles from './styles.module.css'
 import Echart from './Echarts'
+import { EchartOption } from 'echarts'
 import {
   AxisPointer,
   Grid,
@@ -17,7 +18,8 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-  Graphic
+  Graphic,
+  DataZoom
 } from './components'
 import {
   IBaseOption,
@@ -37,7 +39,8 @@ import {
   ISeriesRadar,
   ISeriesScatter,
   IToolbox,
-  IGraphic
+  IGraphic,
+  IDataZoom
 } from './types'
 
 export {
@@ -56,7 +59,8 @@ export {
   Tooltip,
   XAxis,
   YAxis,
-  Graphic
+  Graphic,
+  DataZoom
 }
 
 export {
@@ -77,7 +81,9 @@ export {
   ISeriesScatter,
   ISeriesLineOrBar,
   IToolbox,
-  IGraphic
+  IGraphic,
+  IDataZoom,
+  EchartOption as IEcharts
 }
 
 export { Echart }

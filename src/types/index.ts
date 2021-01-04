@@ -17,7 +17,8 @@ import {
   ISeriesRadar,
   ISeriesScatter,
   IToolbox,
-  IGraphic
+  IGraphic,
+  IDataZoom
 } from './chartTypes'
 
 // export interface ITitleOption extends EChartTitleOption {}
@@ -51,6 +52,7 @@ export type ISeriesScatterOption = ArrayOptionType<ISeriesScatter>
 export type ISeriesLineOrBarOption = ArrayOptionType<ISeriesLineOrBar>
 
 export type IGraphicOption = OptionType<IGraphic>
+export type IDataZoomOption = OptionType<IDataZoom>
 
 export type IBaseOption = Pick<
   EChartOption,
@@ -88,6 +90,7 @@ export type IAttachmentType =
   | IAxisPointerOption
   | IToolboxOption
   | IGraphicOption
+  | IDataZoomOption
 
 export type ISeriesType =
   | ISeriesBarOption
@@ -130,5 +133,6 @@ export {
   ISeriesScatter,
   ISeriesLineOrBar,
   IToolbox,
-  IGraphic
+  IGraphic,
+  IDataZoom
 }

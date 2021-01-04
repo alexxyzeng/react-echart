@@ -8,5 +8,6 @@ export enum ChartComponent {
   YAxis = 'yAxis',
   AxisPointer = 'axisPointer',
   Toolbox = 'toolbox',
-  Graphic = 'graphic'
+  Graphic = 'graphic',
+  DataZoom = 'dataZoom'
 }
