@@ -1,7 +1,6 @@
 // import * as React from 'react'
 // import styles from './styles.module.css'
 import Echart from './Echarts'
-import { EchartOption } from 'echarts'
 import {
   AxisPointer,
   Grid,
@@ -82,8 +81,7 @@ export {
   ISeriesLineOrBar,
   IToolbox,
   IGraphic,
-  IDataZoom,
-  EchartOption as IEcharts
+  IDataZoom
 }
 
 export { Echart }
