@@ -1,5 +1,5 @@
-// import React from 'react'
-import 'echarts/lib/component/graphic'
+import { memo } from 'react'
+
 import { ChartComponent } from '../enum'
 import { IGraphicOption } from '../types'
 import { useOption } from '../hooks'
@@ -9,4 +9,4 @@ function Graphic(options: IGraphicOption) {
   return null
 }
 
-export default Graphic
+export default memo(Graphic)

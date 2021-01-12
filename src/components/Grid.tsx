@@ -1,5 +1,5 @@
 // import React from 'react'
-import 'echarts/lib/component/grid'
+import { memo } from 'react'
 import { ChartComponent } from '../enum'
 import { IGridOption } from '../types'
 import { useOption } from '../hooks'
@@ -9,4 +9,4 @@ function Grid(options: IGridOption) {
   return null
 }
 
-export default Grid
+export default memo(Grid)

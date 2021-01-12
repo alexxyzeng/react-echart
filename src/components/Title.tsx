@@ -1,5 +1,5 @@
 // import React from 'react'
-import 'echarts/lib/component/title'
+import { memo } from 'react'
 import { ChartComponent } from '../enum'
 import { ITitleOption } from '../types'
 import { useOption } from '../hooks'
@@ -9,4 +9,4 @@ function Title(options: ITitleOption) {
   return null
 }
 
-export default Title
+export default memo(Title)

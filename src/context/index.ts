@@ -15,3 +15,13 @@ export const EchartsOptionContext = createContext<IContextType>({
   setOptions: () => {},
   updateOption: () => {}
 })
+
+export interface IEventContextType {
+  onEvent: (type: string, handler: (...args: any[]) => void) => void
+  offEvent: (type: string, handler: (...args: any[]) => void) => void
+}
+
+export const EchartsEventContext = createContext<IEventContextType>({
+  onEvent: () => {},
+  offEvent: () => {}
+})

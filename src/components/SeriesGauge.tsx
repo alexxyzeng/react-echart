@@ -1,4 +1,4 @@
-import 'echarts/lib/chart/gauge'
+import { memo } from 'react'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesGaugeOption } from '../types'
@@ -9,4 +9,4 @@ function SeriesGauge(options: ISeriesGaugeOption) {
   return null
 }
 
-export default SeriesGauge
+export default memo(SeriesGauge)

@@ -1,4 +1,4 @@
-import 'echarts/lib/chart/bar'
+import { memo } from 'react'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesBarOption } from '../types'
@@ -9,4 +9,4 @@ function SeriesBar(options: ISeriesBarOption) {
   return null
 }
 
-export default SeriesBar
+export default memo(SeriesBar)

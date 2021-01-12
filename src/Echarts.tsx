@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
 import React, { Component, createRef, ReactNode } from 'react'
-import Echarts from 'echarts/lib/echarts'
+import Echarts from './lib'
 import { EchartsOptionContext, IContextType } from './context'
 import { IBaseOption } from './types'
 
 interface IProps {
-  className: string
+  className?: string
   children: ReactNode
   notMerge?: boolean
   lazyUpdate?: boolean
@@ -26,8 +26,6 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     super(props)
     this.echartsElementRef = createRef()
     this.options = {
-      xAxis: { show: false },
-      yAxis: { show: false },
       series: [],
       ...(this.options || {})
     }

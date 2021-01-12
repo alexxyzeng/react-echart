@@ -1,5 +1,3 @@
-import 'echarts/lib/chart/line'
-import 'echarts/lib/chart/bar'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesLineOrBarOption } from '../types'

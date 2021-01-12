@@ -1,5 +1,5 @@
 // import React from 'react'
-import 'echarts/lib/component/tooltip'
+import { memo } from 'react'
 import { ChartComponent } from '../enum'
 import { ITooltipOption } from '../types'
 import { useOption } from '../hooks'
@@ -9,4 +9,4 @@ function Tooltip(options: ITooltipOption) {
   return null
 }
 
-export default Tooltip
+export default memo(Tooltip)
