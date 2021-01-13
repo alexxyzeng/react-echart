@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { Component, createRef, ReactNode } from 'react'
-import Echarts from './lib'
-import { EchartsEventContext, EchartsOptionContext, IContextType as IOptionContextType, IEventContextType } from './context'
-import { IEventType, IBaseOption } from './types'
+import Echarts from 'echarts/lib/echarts'
+import { EchartsOptionContext, IOptionContextType, IEventContextType, EchartsEventContext } from './context'
+import { IBaseOption, IEventType } from './types'
+import { ChartComponent } from './enum'
 
 interface IProps {
   className?: string
@@ -27,6 +28,8 @@ class EchartsReactCore extends Component<IProps, IState> {
     super(props)
     this.echartsElementRef = createRef()
     this.options = {
+      xAxis: { },
+      yAxis: { },
       series: [],
       ...(props.options || {})
     }
@@ -46,13 +49,27 @@ class EchartsReactCore extends Component<IProps, IState> {
     console.log(options)
   }
 
-  updateOption = (options: Partial<Echarts.EChartOption>) => {
+  updateOption = (options: Partial<Echarts.EChartOption>, componentKey: ChartComponent) => {
+    if (this.options[componentKey] === options) {
+      console.log(`Component ${componentKey} not changed`)
+      return 
+    }
     this.options = { ...this.options, ...options }
     console.log('====================================')
     console.log(this.options, '--- options')
     console.log('====================================')
     const { notMerge, lazyUpdate } = this.props
     this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
+  }
+
+  onEvent = (params: IEventType) => {
+    const { type, handler } = params
+    this.echartsLib.on(type, handler)
+  }
+
+  offEvent = (params: IEventType) => {
+    const { type, handler } = params
+    this.echartsLib.off(type, handler)
   }
 
   componentDidMount() {
@@ -82,16 +99,6 @@ class EchartsReactCore extends Component<IProps, IState> {
     }
   }
 
-  onEvent = (params: IEventType) => {
-    const { type, handler } = params
-    this.echartsLib.on(type, handler)
-  }
-
-  offEvent = (params: IEventType) => {
-    const { type, handler } = params
-    this.echartsLib.off(type, handler)
-  }
-  
 
   render() {
     const { className = '', children } = this.props

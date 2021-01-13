@@ -4,7 +4,7 @@ import { EChartOption } from 'echarts'
 import { ChartComponent } from '../enum'
 import { IEventType } from '../types'
 
-export interface IContextType {
+export interface IOptionContextType {
   setOptions: (options: EChartOption) => void
   updateOption: (
     options: Partial<EChartOption>,
@@ -12,7 +12,7 @@ export interface IContextType {
   ) => void
 }
 
-export const EchartsOptionContext = createContext<IContextType>({
+export const EchartsOptionContext = createContext<IOptionContextType>({
   setOptions: () => {},
   updateOption: () => {}
 })
