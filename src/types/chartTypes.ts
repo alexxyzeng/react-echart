@@ -17,7 +17,7 @@ export type ISeriesRadar = EChartOption.SeriesRadar
 export type ISeriesScatter = EChartOption.SeriesScatter
 export type IToolbox = EchartOption.toolbox
 export type IGraphic = any
-export type IDataZoom = EChartOption.DataZoom
+export type IDataZoom = EChartOption.DataZoom & { height: number }
 
 export interface IToolboxOption {}
 

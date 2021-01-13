@@ -13,7 +13,8 @@ import {
   IBaseOption,
   YAxis,
   XAxis,
-  Event
+  Event,
+  DataZoom
 } from 'react-echart'
 
 // const seriesOption: Array<ISeriesPie> = [
@@ -87,6 +88,20 @@ const App = () => {
         <Toolbox options={toolboxOption} />
         {/* <Graphic options={graphicOption} /> */}
         <Event type="click" handler={console.log} />
+        <DataZoom options={
+        {
+          id: 'dataZoomX',
+          type: 'slider',
+          start: 0,
+          end: 4,
+          zoomOnMouseWheel: false,
+          minValueSpan: 10,
+          maxValueSpan: 10,
+          height: 20,
+          bottom: 0,
+          show: true
+        }
+      } />
       </Echart>
     </div>
   )

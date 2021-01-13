@@ -52,7 +52,7 @@ export type ISeriesScatterOption = ArrayOptionType<ISeriesScatter>
 export type ISeriesLineOrBarOption = ArrayOptionType<ISeriesLineOrBar>
 
 export type IGraphicOption = OptionType<IGraphic>
-export type IDataZoomOption = OptionType<IDataZoom>
+export type IDataZoomOption = ArrayMaybeOptionType<IDataZoom>
 
 export type IBaseOption = Pick<
   EChartOption,
