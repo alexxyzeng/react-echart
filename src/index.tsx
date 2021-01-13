@@ -20,6 +20,9 @@ import {
   Graphic,
   DataZoom
 } from './components'
+
+import Event from './events'
+
 import {
   IBaseOption,
   ITitle,
@@ -39,7 +42,12 @@ import {
   ISeriesScatter,
   IToolbox,
   IGraphic,
-  IDataZoom
+  IDataZoom,
+  ILegendEvent,
+  IMouseEvent,
+  IOtherEvent,
+  EchartsMouseEventParams,
+  IEventType
 } from './types'
 
 export {
@@ -59,7 +67,8 @@ export {
   XAxis,
   YAxis,
   Graphic,
-  DataZoom
+  DataZoom,
+  Event
 }
 
 export {
@@ -81,7 +90,12 @@ export {
   ISeriesLineOrBar,
   IToolbox,
   IGraphic,
-  IDataZoom
+  IDataZoom,
+  ILegendEvent,
+  IMouseEvent,
+  IOtherEvent,
+  EchartsMouseEventParams,
+  IEventType
 }
 
 export { Echart }

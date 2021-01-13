@@ -13,7 +13,7 @@ import {
   IBaseOption,
   YAxis,
   XAxis,
-  Legend
+  Legend,
 } from 'react-echart'
 
 const seriesOption: Array<ISeriesPie> = [

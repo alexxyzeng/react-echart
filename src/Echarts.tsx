@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from './lib'
-import { EchartsOptionContext, IContextType } from './context'
-import { IBaseOption } from './types'
+import { EchartsEventContext, EchartsOptionContext, IContextType as IOptionContextType, IEventContextType } from './context'
+import { IEventType, IBaseOption } from './types'
 
 interface IProps {
   className?: string
@@ -12,13 +12,14 @@ interface IProps {
   options?: IBaseOption
 }
 
-// interface IState {
-//   options: Echarts.EChartOption
-// }
+interface IState {
+  optionHandler: IOptionContextType,
+  eventHandler: IEventContextType
+}
 
 const ECHARTS_STYLE = { height: '100%', width: '100%' }
 
-class EchartsReactCore extends Component<IProps, IContextType> {
+class EchartsReactCore extends Component<IProps, IState> {
   echartsLib: Echarts.ECharts
   echartsElementRef: React.RefObject<HTMLDivElement>
   options: Echarts.EChartOption
@@ -27,11 +28,17 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     this.echartsElementRef = createRef()
     this.options = {
       series: [],
-      ...(this.options || {})
+      ...(props.options || {})
     }
     this.state = {
-      setOptions: this.setOption,
-      updateOption: this.updateOption
+      optionHandler: {
+        setOptions: this.setOption,
+        updateOption: this.updateOption
+      },
+      eventHandler: {
+        onEvent: this.onEvent,
+        offEvent: this.offEvent
+      }
     }
   }
 
@@ -57,6 +64,17 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     const { lazyUpdate, notMerge } = this.props
     this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
   }
+  
+  componentDidUpdate(prevProps: IProps) {
+    const { options, notMerge, lazyUpdate } = this.props
+    if (prevProps.options !== options) {
+      this.options = {
+        ...this.options,
+        ...this.props.options
+      }
+      this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
+    }
+  }
 
   componentWillUnmount() {
     if (!this.echartsLib.isDisposed()) {
@@ -64,19 +82,34 @@ class EchartsReactCore extends Component<IProps, IContextType> {
     }
   }
 
+  onEvent = (params: IEventType) => {
+    const { type, handler } = params
+    this.echartsLib.on(type, handler)
+  }
+
+  offEvent = (params: IEventType) => {
+    const { type, handler } = params
+    this.echartsLib.off(type, handler)
+  }
+  
+
   render() {
     const { className = '', children } = this.props
+    const { optionHandler, eventHandler } = this.state
     return (
-      <EchartsOptionContext.Provider value={this.state}>
-        <div
-          style={ECHARTS_STYLE}
-          ref={this.echartsElementRef}
-          className={`echarts-for-react ${className}`}
-        />
-        {children}
+      <EchartsOptionContext.Provider value={optionHandler}>
+        <EchartsEventContext.Provider value={eventHandler}>
+          <div
+            style={ECHARTS_STYLE}
+            ref={this.echartsElementRef}
+            className={`echarts-for-react ${className}`}
+          />
+          {children}
+        </EchartsEventContext.Provider>
       </EchartsOptionContext.Provider>
     )
   }
 }
 
 export default EchartsReactCore
+
