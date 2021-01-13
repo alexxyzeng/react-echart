@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import 'echarts/lib/chart/radar'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesRadarOption } from '../types'
@@ -9,4 +9,4 @@ function SeriesRadar(options: ISeriesRadarOption) {
   return null
 }
 
-export default memo(SeriesRadar)
+export default SeriesRadar

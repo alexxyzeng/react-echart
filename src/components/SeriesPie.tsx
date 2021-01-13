@@ -1,5 +1,4 @@
-
-import { memo } from 'react'
+import 'echarts/lib/chart/pie'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesPieOption } from '../types'
@@ -10,4 +9,4 @@ function SeriesPie(options: ISeriesPieOption) {
   return null
 }
 
-export default memo(SeriesPie)
+export default SeriesPie

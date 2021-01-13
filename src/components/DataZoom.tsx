@@ -1,6 +1,5 @@
 // import React from 'react'
-
-import { memo } from 'react'
+import 'echarts/lib/component/dataZoom'
 import { ChartComponent } from '../enum'
 import { IDataZoomOption } from '../types'
 import { useOption } from '../hooks'
@@ -10,4 +9,4 @@ function DataZoom(options: IDataZoomOption) {
   return null
 }
 
-export default memo(DataZoom)
+export default DataZoom

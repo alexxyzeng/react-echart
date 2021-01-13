@@ -1,5 +1,4 @@
-
-import { memo } from 'react'
+import 'echarts/lib/chart/line'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesLineOption } from '../types'
@@ -10,4 +9,4 @@ function SeriesLine(options: ISeriesLineOption) {
   return null
 }
 
-export default memo(SeriesLine)
+export default SeriesLine

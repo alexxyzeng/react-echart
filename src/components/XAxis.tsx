@@ -1,4 +1,5 @@
-import { memo } from 'react'
+// import React from 'react'
+import 'echarts/lib/component/grid'
 import { ChartComponent } from '../enum'
 import { IXAxisOption, OptionType } from '../types'
 import { useOption } from '../hooks'
@@ -8,4 +9,4 @@ function XAxis(options: IXAxisOption) {
   return null
 }
 
-export default memo(XAxis)
+export default XAxis

@@ -1,4 +1,4 @@
-import { memo } from 'react'
+import 'echarts/lib/chart/scatter'
 import { ChartComponent } from '../enum'
 import { useOption } from '../hooks'
 import { ISeriesScatterOption } from '../types'
@@ -9,4 +9,4 @@ function SeriesScatter(options: ISeriesScatterOption) {
   return null
 }
 
-export default memo(SeriesScatter)
+export default SeriesScatter

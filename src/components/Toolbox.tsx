@@ -1,5 +1,5 @@
 // import React from 'react'
-import { memo } from 'react'
+import 'echarts/lib/component/toolbox'
 import { ChartComponent } from '../enum'
 import { IToolboxOption } from '../types'
 import { useOption } from '../hooks'
@@ -9,4 +9,4 @@ function Toolbox(options: IToolboxOption) {
   return null
 }
 
-export default memo(Toolbox)
+export default Toolbox
