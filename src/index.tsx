@@ -1,7 +1,4 @@
-// import * as React from 'react'
-// import styles from './styles.module.css'
 import Echart from './Echarts'
-import { EchartOption } from 'echarts'
 import {
   AxisPointer,
   Grid,
@@ -21,6 +18,9 @@ import {
   Graphic,
   DataZoom
 } from './components'
+
+import Event from './events'
+
 import {
   IBaseOption,
   ITitle,
@@ -40,7 +40,12 @@ import {
   ISeriesScatter,
   IToolbox,
   IGraphic,
-  IDataZoom
+  IDataZoom,
+  ILegendEvent,
+  IMouseEvent,
+  IOtherEvent,
+  EchartsMouseEventParams,
+  IEventType
 } from './types'
 
 export {
@@ -60,7 +65,8 @@ export {
   XAxis,
   YAxis,
   Graphic,
-  DataZoom
+  DataZoom,
+  Event
 }
 
 export {
@@ -83,7 +89,11 @@ export {
   IToolbox,
   IGraphic,
   IDataZoom,
-  EchartOption as IEcharts
+  ILegendEvent,
+  IMouseEvent,
+  IOtherEvent,
+  EchartsMouseEventParams,
+  IEventType
 }
 
 export { Echart }

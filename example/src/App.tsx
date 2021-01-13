@@ -2,30 +2,31 @@ import React from 'react'
 
 import {
   Echart,
-  SeriesPie,
-  ISeriesPie,
+  SeriesLine,
+  // ISeriesPie,
   Tooltip,
   ITooltip,
   Toolbox,
   IToolbox,
-  Graphic,
-  IGraphic,
+  // Graphic,
+  // IGraphic,
   IBaseOption,
   YAxis,
-  XAxis
+  XAxis,
+  Event
 } from 'react-echart'
 
-const seriesOption: Array<ISeriesPie> = [
-  {
-    data: [{ name: '平均满意度', value: 3.9915 }],
-    type: 'pie',
-    radius: ['50%', '70%'],
-    avoidLabelOverlap: false,
-    label: { show: false },
-    emphasis: { label: { show: false } },
-    labelLine: { show: false }
-  }
-]
+// const seriesOption: Array<ISeriesPie> = [
+//   {
+//     data: [{ name: '平均满意度', value: 3.9915 }],
+//     type: 'pie',
+//     radius: ['50%', '70%'],
+//     avoidLabelOverlap: false,
+//     label: { show: false },
+//     emphasis: { label: { show: false } },
+//     labelLine: { show: false }
+//   }
+// ]
 
 const tooltipOption: ITooltip = {
   trigger: 'item'
@@ -62,26 +63,30 @@ const baseOptions: IBaseOption = {
   color: EchartsColorEnum
 }
 
-const graphicOption: IGraphic = {
-  type: 'rect',
-  left: 'center',
-  top: 'center',
-  style: {
-    text: '3.9915\n\n平均满意度',
-    textAlign: 'center'
-  }
-}
+// const graphicOption: IGraphic = {
+//   type: 'rect',
+//   left: 'center',
+//   top: 'center',
+//   style: {
+//     text: '3.9915\n\n平均满意度',
+//     textAlign: 'center'
+//   }
+// }
 
 const App = () => {
   return (
     <div style={{ width: 600, height: 500 }}>
       <Echart className='test' options={baseOptions}>
-        <SeriesPie options={seriesOption} />
-        <YAxis options={{ show: false }} />
-        <XAxis options={{ show: false }} />
+        <SeriesLine options={[{
+        data: [120, 200, 150, 80, 70, 110, 130],
+        type: 'bar'
+    }]} />
+        <YAxis options={{ show: true, type: 'value' }} />
+        <XAxis options={{ show: true, type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }} />
         <Tooltip options={tooltipOption} />
         <Toolbox options={toolboxOption} />
-        <Graphic options={graphicOption} />
+        {/* <Graphic options={graphicOption} /> */}
+        <Event type="click" handler={console.log} />
       </Echart>
     </div>
   )
