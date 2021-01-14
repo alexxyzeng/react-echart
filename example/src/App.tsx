@@ -77,7 +77,7 @@ const baseOptions: IBaseOption = {
 const App = () => {
   return (
     <div style={{ width: 600, height: 500 }}>
-      <Echart className='test' options={baseOptions}>
+      <Echart className='test' options={baseOptions} showLoading={false} loadingType="">
         <SeriesLine options={[{
         data: [120, 200, 150, 80, 70, 110, 130],
         type: 'bar'
@@ -86,7 +86,6 @@ const App = () => {
         <XAxis options={{ show: true, type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }} />
         <Tooltip options={tooltipOption} />
         <Toolbox options={toolboxOption} />
-        {/* <Graphic options={graphicOption} /> */}
         <Event type="click" handler={console.log} />
         <DataZoom options={
         {
@@ -102,6 +101,8 @@ const App = () => {
           show: true
         }
       } />
+        <Event type="click" handler={console.log} />
+        <Event type="mouseout" handler={console.log} />
       </Echart>
     </div>
   )
