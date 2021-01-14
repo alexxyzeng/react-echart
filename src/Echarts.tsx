@@ -2,8 +2,9 @@
 import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from 'echarts/lib/echarts'
 import { EchartsOptionContext, IOptionContextType, IEventContextType, EchartsEventContext } from './context'
-import { IBaseOption, IEventType, ILoadingOption, IResizeOption } from './types'
+import { IBaseOption, IEventType, ILoadingOption, IResizeOption, IYAxis } from './types'
 import { ChartComponent } from './enum'
+import { XAxis } from './components'
 
 interface IProps {
   className?: string
@@ -33,8 +34,8 @@ class EchartsReactCore extends Component<IProps, IState> {
     super(props)
     this.echartsElementRef = createRef()
     this.options = {
-      xAxis: { },
-      yAxis: { },
+      xAxis: { show: false },
+      yAxis: { show: false },
       series: [],
       ...(props.options || {})
     }
@@ -59,11 +60,33 @@ class EchartsReactCore extends Component<IProps, IState> {
       console.log(`Component ${componentKey} not changed`)
       return 
     }
-    delete this.options[componentKey]
+    if (componentKey === ChartComponent.XAxis || componentKey === ChartComponent.YAxis) {
+      
+      let optionValue = options[componentKey]
+      if (Array.isArray(optionValue)) {
+        // @ts-ignore
+        options[componentKey] = optionValue.map(option => {
+          return {
+            ...option,
+            show: option.show !== false
+          }
+        })
+      } else {
+        // @ts-ignore
+        options[componentKey] = {
+          ...optionValue,
+          // @ts-ignore
+          show: options.show !== false
+        }
+      }
+    }
+    console.log('====================================');
+    console.log(options);
+    console.log('====================================');
     this.options = { ...this.options, ...options }
-    console.log('====================================')
-    console.log(this.options, '--- options')
-    console.log('====================================')
+    if (componentKey === ChartComponent.Series) {
+      
+    }
     const { notMerge, lazyUpdate } = this.props
     this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
   }

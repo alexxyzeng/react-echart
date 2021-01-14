@@ -8,7 +8,8 @@ export interface IOptionContextType {
   setOptions: (options: EChartOption) => void
   updateOption: (
     options: Partial<EChartOption>,
-    optionKey: ChartComponent
+    optionKey: ChartComponent,
+    subOptionKey?: ChartComponent
   ) => void
 }
 

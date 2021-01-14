@@ -82,7 +82,7 @@ const App = () => {
         data: [120, 200, 150, 80, 70, 110, 130],
         type: 'bar'
     }]} />
-        <YAxis options={{ type: 'value', data: [10, 40, 60, 100, 200] }} />
+        <YAxis options={{ type: 'value' }} />
         <XAxis options={{ type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }} />
         <Tooltip options={tooltipOption} />
         <Toolbox options={toolboxOption} />
