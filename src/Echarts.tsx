@@ -59,6 +59,7 @@ class EchartsReactCore extends Component<IProps, IState> {
       console.log(`Component ${componentKey} not changed`)
       return 
     }
+    delete this.options[componentKey]
     this.options = { ...this.options, ...options }
     console.log('====================================')
     console.log(this.options, '--- options')
