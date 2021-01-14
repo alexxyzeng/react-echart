@@ -86,7 +86,6 @@ const App = () => {
         <XAxis options={{ show: true, type: 'category', data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'] }} />
         <Tooltip options={tooltipOption} />
         <Toolbox options={toolboxOption} />
-        <Event type="click" handler={console.log} />
         <DataZoom options={
         {
           id: 'dataZoomX',
