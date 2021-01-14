@@ -2,7 +2,7 @@
 import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from 'echarts/lib/echarts'
 import { EchartsOptionContext, IOptionContextType, IEventContextType, EchartsEventContext } from './context'
-import { IBaseOption, IEventType } from './types'
+import { IBaseOption, IEventType, ILoadingOption, IResizeOption } from './types'
 import { ChartComponent } from './enum'
 
 interface IProps {
@@ -10,7 +10,12 @@ interface IProps {
   children: ReactNode
   notMerge?: boolean
   lazyUpdate?: boolean
-  options?: IBaseOption
+  options?: IBaseOption,
+  resize?: boolean
+  resizeOption?: IResizeOption
+  showLoading?: boolean
+  loadingType?: string
+  loadingOption?: ILoadingOption
 }
 
 interface IState {
@@ -78,18 +83,34 @@ class EchartsReactCore extends Component<IProps, IState> {
       this.echartsElementRef.current as HTMLDivElement,
       this.options
     )
-    const { lazyUpdate, notMerge } = this.props
+    const { lazyUpdate, notMerge, showLoading, loadingType, loadingOption, resize, resizeOption } = this.props
     this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
+    if (showLoading) {
+      this.echartsLib.showLoading(loadingType, loadingOption)
+    }
+    if (resize) {
+      window.onresize = () => {
+        this.echartsLib.resize(resizeOption)
+      }
+    }
   }
   
   componentDidUpdate(prevProps: IProps) {
-    const { options, notMerge, lazyUpdate } = this.props
+    const { options, notMerge, lazyUpdate, showLoading, loadingType, loadingOption } = this.props
     if (prevProps.options !== options) {
       this.options = {
         ...this.options,
         ...this.props.options
       }
       this.echartsLib.setOption(this.options, notMerge, lazyUpdate)
+    }
+    if (prevProps.showLoading === showLoading) {
+      return
+    }
+    if (showLoading) {
+      this.echartsLib.showLoading(loadingType, loadingOption)
+    } else {
+      this.echartsLib.hideLoading()
     }
   }
 

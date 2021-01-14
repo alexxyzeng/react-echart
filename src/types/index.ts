@@ -1,5 +1,11 @@
 // eslint-disable-next-line no-unused-vars
-import { EChartOption } from 'echarts'
+import {
+  EChartOption,
+  EChartsLoadingOption,
+  EChartsResizeOption,
+  EChartsResponsiveOption,
+  EChartsMediaOption
+} from 'echarts'
 import {
   ITitle,
   ILegend,
@@ -245,3 +251,17 @@ export interface IOtherEvent {
 }
 
 export type IEventType = IMouseEvent | ILegendEvent | IOtherEvent
+
+export type ITooltipFormatter = EChartOption.Tooltip.Formatter
+
+export type IFormatter = Function | string
+
+export type ILoadingOption = EChartsLoadingOption
+
+export type IResizeOption = EChartsResizeOption
+
+export type IResponsiveOption = EChartsResponsiveOption
+
+export type IMediaOption = EChartsMediaOption
+
+// export type ISeriesType = EChartsSeriesType

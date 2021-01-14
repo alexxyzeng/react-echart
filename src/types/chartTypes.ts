@@ -4,6 +4,7 @@ export type ITitle = EChartTitleOption
 export type IGrid = EChartOption.Grid
 export type ILegend = EChartOption.Legend
 export type ITooltip = EChartOption.Tooltip
+
 export type IXAxis = EChartOption.XAxis
 export type IYAxis = EChartOption.YAxis
 export type IAxisPointer = EChartOption.AxisPointer
