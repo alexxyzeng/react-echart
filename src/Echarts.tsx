@@ -2,9 +2,8 @@
 import React, { Component, createRef, ReactNode } from 'react'
 import Echarts from 'echarts/lib/echarts'
 import { EchartsOptionContext, IOptionContextType, IEventContextType, EchartsEventContext } from './context'
-import { IBaseOption, IEventType, ILoadingOption, IResizeOption, IYAxis } from './types'
+import { IBaseOption, IEventType, ILoadingOption, IResizeOption } from './types'
 import { ChartComponent } from './enum'
-import { XAxis } from './components'
 
 interface IProps {
   className?: string

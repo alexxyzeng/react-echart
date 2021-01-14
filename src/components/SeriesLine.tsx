@@ -5,7 +5,7 @@ import { ISeriesLineOption } from '../types'
 
 // TODO: 增加转换方法
 function SeriesLine(options: ISeriesLineOption) {
-  useOption(options, ChartComponent.Series, ChartComponent.Line)
+  useOption(options, ChartComponent.Series)
   return null
 }
 
